@@ -5,8 +5,8 @@
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "module": "ES6",
-    "moduleResolution": "node",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
     "outDir": "dist",
     "paths": {
       "*.ts": ["*"]

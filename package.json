@@ -2,6 +2,8 @@
   "author": "Aaron Dewberry <altrae@gmail.com>",
   "description": "Learn NodeJS",
   "devDependencies": {
+    "@types/node": "^18.11.5",
+    "fs": "^0.0.1-security",
     "ts-node": "^10.9.1",
     "typescript": "^4.8.4"
   },
@@ -9,7 +11,8 @@
   "main": "app.ts",
   "name": "node-playground",
   "scripts": {
-    "start": "ts-node --esm ./src/app.ts"
+    "start": "ts-node --esm ./src/app.ts",
+    "start:node": "node ./src/app.js"
   },
   "type": "module",
   "version": "1.0.0"

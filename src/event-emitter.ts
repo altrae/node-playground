@@ -1,4 +1,4 @@
-class Emitter {
+class EventEmitter {
   events = {};
 
   emit = (event, eventData): void => {
@@ -9,16 +9,16 @@ class Emitter {
     }
   };
 
-  addEventListener = (event, listener) => {
+  addListener = (event, listener) => {
     this.events[event] = this.events[event] || [];
     this.events[event].push(listener);
   };
 
-  removeEventListener = (event, listener) => {
+  removeListener = (event, listener) => {
     this.events[event] = this.events[event].filter(
       (eventListener) => eventListener !== listener
     );
   };
 }
 
-export { Emitter };
+export { EventEmitter };

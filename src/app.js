@@ -8,13 +8,12 @@ const read = (error, data) => {
 
 const readme = fs.readFile("./readme.md", "utf-8", read);
 
-console.log({ readme });
-
 exports = "a";
 module.exports = "b";
 
 console.log({
   exports,
-  moduleExports: module.exports,
+  module: { ...module.exports },
   equal: exports === module.exports,
+  readme,
 });

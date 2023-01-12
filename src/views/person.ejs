@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/assets/styles.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="flex flex-col items-center font-bold">
+    <h1>Hello <%= ID %>, <%= ID.length %>!</h1>
+
+    <div class="text-blue-500">Query: <%= query %></div>
+    <!-- Example of query usage: https://localhost:1337/person/aaron?query=who%20am%20i -->
+  </body>
+</html>

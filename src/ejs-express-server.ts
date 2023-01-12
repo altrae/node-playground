@@ -1,12 +1,17 @@
 import express from "express";
-import { readFileSync } from "node:fs";
 import https from "node:https";
 import { credentials } from "./credentials.js";
 import { __dirname, __filename } from "./utils.js";
 
+import apiController from "./controllers/api.js";
+import htmlController from "./controllers/html.js";
+
 const app = express();
 
 app.use("/assets", express.static(`${__dirname}/assets`));
+
+app.set("views", "./src/views");
+app.set("view engine", "ejs");
 
 // Creating and using your own middleware example:
 app.use("/", (request, response, next) => {
@@ -14,26 +19,9 @@ app.use("/", (request, response, next) => {
   next();
 });
 
-app.get("/", (request, response) => {
-  const index = readFileSync(`${__dirname}/views/index.htm`).toString();
+htmlController(app);
 
-  response.send(index);
-});
-
-app.get("/person/:id", (request, response) => {
-  const index = readFileSync(`${__dirname}/views/index.htm`)
-    .toString()
-    .replaceAll("{person}", request.params.id);
-
-  response.send(index);
-});
-
-app.get("/api", (request, response) => {
-  response.send({
-    "first-name": "A-a-ron",
-    "last-name": "Dewwwwwberrry",
-  });
-});
+apiController(app);
 
 const httpsServer = https.createServer(credentials, app);
 const port = process.env.PORT || 3000;

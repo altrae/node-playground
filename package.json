@@ -1,6 +1,8 @@
 {
   "author": "Aaron Dewberry <altrae@gmail.com>",
   "dependencies": {
+    "body-parser": "^1.20.1",
+    "ejs": "^3.1.8",
     "express": "^4.18.2"
   },
   "description": "Learn NodeJS",
@@ -16,6 +18,7 @@
   "scripts": {
     "start:app": "node ./src/app.js",
     "start:express-server": "set PORT=1337 && nodemon --esm ./src/express-server.ts --inspect",
+    "start:ejs-express-server": "set PORT=1337 && nodemon --esm ./src/ejs-express-server.ts --inspect",
     "start:ts-app": "ts-node --esm ./src/app.ts",
     "start:ts-server": "ts-node --esm ./src/server.ts --inspect"
   },
